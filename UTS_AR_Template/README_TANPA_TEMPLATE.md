@@ -10,6 +10,8 @@ Gunakan dokumen ini jika:
 
 Jika ingin jalur cepat memakai template, lihat `README.md`.
 
+> **Catatan visual:** Gambar-gambar di tutorial ini adalah **ilustrasi posisi panel/menu**, bukan screenshot asli Unity. Tampilan Unity 6 dapat sedikit berbeda, tetapi nama menu dan letak panelnya sama.
+
 ---
 
 ## 0. Requirement UTS dan modul
@@ -96,6 +98,10 @@ Proyek Unity baru akan membuat folder `Library`. Sisakan beberapa GB ruang koson
 6. Tunggu Unity selesai membuat proyek.
 7. Pastikan versi editor **6000.0.34f1** atau Unity 6 lain.
 
+![Ilustrasi Unity Hub](docs/images/01-unity-hub.png)
+
+*Gambar 1. Posisi template 3D (Built-in) dan tombol Create project di Unity Hub (ilustrasi).*
+
 ### 3.2 Buat folder kerja
 
 Di Project window, buat folder berikut di dalam `Assets`:
@@ -111,6 +117,10 @@ Assets/
 ```
 
 Cara membuat: klik kanan `Assets` > **Create > Folder**.
+
+![Ilustrasi panel Unity Editor](docs/images/02-editor-layout.png)
+
+*Gambar 2. Letak panel Hierarchy, Scene, Inspector, Project, dan Game di Unity Editor (ilustrasi).*
 
 ### 3.3 Pasang paket Vuforia
 
@@ -155,6 +165,10 @@ Jika menu Vuforia tidak muncul:
 - Pastikan tarball tidak rusak.
 - Pastikan Unity 6 kompatibel dengan Vuforia 11.4.4.
 - Coba restart Unity.
+
+![Ilustrasi Package Manager](docs/images/03-package-manager.png)
+
+*Gambar 3. Tombol + dan menu Add package from tarball di Package Manager (ilustrasi).*
 
 ### 3.4 Siapkan license Vuforia
 
@@ -216,6 +230,10 @@ Aturan marker yang baik:
 - kaya detail;
 - kontras terang/gelap bagus;
 - tidak ada pola berulang.
+
+![Ilustrasi license dan dataset](docs/images/04-license-dataset.png)
+
+*Gambar 4. Letak license di Assets/Resources, dataset di Assets/StreamingAssets/Vuforia, dan model di Assets/Models (ilustrasi).*
 
 ### 3.6 Impor model 3D
 
@@ -319,6 +337,10 @@ Buat desain sesuka Anda. Contoh minimal:
 
 Catatan Unity 6: teks UGUI legacy berada di **UI > Legacy > Text**. TextMeshPro berada di **UI > Text - TextMeshPro** dan tidak kompatibel langsung dengan script yang memakai `UnityEngine.UI.Text`.
 
+![Ilustrasi menu utama](docs/images/05-mainmenu-canvas.png)
+
+*Gambar 5. Hierarchy dan Canvas menu utama; tombol TombolMulaiAR berada di bawah Canvas (ilustrasi).*
+
 ### 4.6 Buat script pindah scene
 
 1. Klik kanan `Assets/Scripts` > **Create > C# Script**.
@@ -366,6 +388,10 @@ ARScene
 ```
 
 8. Simpan scene: **File > Save**.
+
+![Ilustrasi OnClick Button](docs/images/06-button-onclick.png)
+
+*Gambar 6. Inspector Button: OnClick, fungsi PindahScene, dan parameter ARScene (ilustrasi).*
 
 ### 4.8 Uji Nomor 1
 
@@ -463,6 +489,10 @@ Jika kubus muncul, berarti AR Camera, marker, dan parenting sudah benar.
    - Z-up: `Rotation X = -90`.
    - Y-up: tidak perlu rotasi.
 9. Letakkan koreksi rotasi/posisi pada model anak, bukan pada wrapper `Konten3D`, agar slider rotasi di Nomor 3 tetap bersih.
+
+![Ilustrasi hierarchy AR](docs/images/07-ar-hierarchy.png)
+
+*Gambar 7. Hierarchy AR: ImageTarget > Konten3D > model dosen, beserta panel Inspector Image Target (ilustrasi).*
 
 ### 5.4 Material dan tekstur
 
@@ -664,6 +694,10 @@ public class scale : MonoBehaviour
 
 Jika skala model asli sudah besar (misalnya 10x), letakkan model di dalam wrapper `Konten3D` dengan skala 1, lalu atur skala model di child. Dengan begitu, slider scale mengubah wrapper, bukan merusak skala internal model. Pastikan kedua slider aktif dan namanya tepat, karena `GameObject.Find` tidak menemukan objek yang nonaktif.
 
+![Ilustrasi slider dan Inspector](docs/images/08-slider-inspector.png)
+
+*Gambar 8. Slider rotateSlider/scaleSlider dan komponen rotasi/scale pada Konten3D (ilustrasi).*
+
 ### 6.8 Uji Nomor 3
 
 1. Simpan `ARScene`.
@@ -755,6 +789,10 @@ Buka **Player Settings**:
    - Active Input Handling: sesuai proyek (New, Old, atau Both).
    - Internet Access: Auto.
    - Camera Usage Description: isi jika diminta.
+
+![Ilustrasi Build Profiles](docs/images/09-build-settings.png)
+
+*Gambar 9. Build Profiles: urutan scene MainMenu 0, ARScene 1, Player Settings, dan tombol Build (ilustrasi).*
 
 ### 7.4 Build
 
