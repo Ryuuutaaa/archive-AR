@@ -68,6 +68,7 @@ Jika aset dari dosen berbeda, gunakan aset dosen. Tutorial ini memakai contoh `D
 - Vuforia Engine **11.4.4** (tarball dari proyek lama atau dari dosen).
 - Android Build Support, Android SDK & NDK, dan OpenJDK melalui Unity Hub untuk build APK.
 - Editor teks/IDE (Visual Studio, VS Code, atau Rider) opsional.
+- Jika meng-clone repo `archive-AR`, jalankan `git lfs install` dan `git lfs pull` terlebih dahulu agar paket Vuforia dan model FBX tersedia.
 
 ### 2.2 Perangkat keras
 
@@ -77,7 +78,7 @@ Jika aset dari dosen berbeda, gunakan aset dosen. Tutorial ini memakai contoh `D
 
 ### 2.3 Ruang disk
 
-Proyek Unity baru akan membuat folder `Library`. Sisakan beberapa GB ruang kosong. Disk `/home` saat dokumen ini dibuat hanya tersisa sekitar 350 MB, jadi kosongkan atau pindahkan proyek ke drive lain sebelum membuka Unity.
+Proyek Unity baru akan membuat folder `Library`. Sisakan beberapa GB ruang kosong. Jika disk penuh, kosongkan atau pindahkan proyek ke drive lain sebelum membuka Unity.
 
 ---
 
@@ -145,6 +146,8 @@ Pilihan 2 — melalui manifest:
 
 4. Simpan, lalu kembali ke Unity.
 5. Tunggu resolusi paket.
+
+Catatan: jika proyek ini di-clone dari repository, jalankan `git lfs install` dan `git lfs pull` terlebih dahulu. Tanpa itu, file `.tgz` masih berupa pointer LFS dan tidak bisa dipasang.
 
 Jika menu Vuforia tidak muncul:
 
@@ -417,6 +420,7 @@ ARScene
    - **Image Target**: pilih target (`cover-sui` atau nama dari dosen).
    - **Width**: sesuaikan dengan XML/dosen. Untuk dataset contoh `cover-sui`: `20`.
    - **Height**: sesuaikan dengan XML/dosen. Untuk dataset contoh `cover-sui`: `31.846153`.
+   - Gambar marker contoh `cover-sui` ada di `DataRafi_new/Assets/Editor/Vuforia/ImageTargetTextures/DataRafi/cover-sui_scaled.jpg`.
 4. Atur posisi `ImageTarget`:
    - Position: `(0, 0, 0)`
    - Rotation: `(0, 0, 0)`
@@ -454,7 +458,7 @@ Jika kubus muncul, berarti AR Camera, marker, dan parenting sudah benar.
    - Position: `(0, 0, 0)` dulu.
    - Rotation: `(0, 0, 0)` dulu.
    - Scale: `(1, 1, 1)` dulu.
-7. Sesuaikan skala model. Target contoh berukuran 20 unit x 31,8 unit. Model dengan tinggi 10–15 unit biasanya proporsional.
+7. Sesuaikan skala model pada **child model**, bukan pada wrapper `Konten3D`. Biarkan wrapper `Konten3D` tetap `Scale (1, 1, 1)` agar slider scale di Nomor 3 bekerja benar. Target contoh berukuran 20 unit x 31,8 unit; model dengan tinggi 10–15 unit biasanya proporsional.
 8. Jika model tidur/miring:
    - Z-up: `Rotation X = -90`.
    - Y-up: tidak perlu rotasi.
@@ -546,6 +550,7 @@ Cara A sudah cukup untuk memenuhi syarat “salah satu zoom/rotasi”. Cara B bi
 3. Pada komponen `Slider`:
    - Min Value: `0`
    - Max Value: `360`
+   - Value: `0`
 4. Atur posisi dan ukuran slider.
 
 ### 6.3 Slider scale
@@ -555,6 +560,7 @@ Cara A sudah cukup untuk memenuhi syarat “salah satu zoom/rotasi”. Cara B bi
 3. Pada komponen `Slider`:
    - Min Value: `0.5`
    - Max Value: `3`
+   - Value: `1`
 4. Atur posisi dan ukuran slider.
 
 Jangan memakai Min Value `0` karena objek akan menghilang.
@@ -590,6 +596,8 @@ public class rotasi : MonoBehaviour
         rotateSlider = GameObject.Find("rotateSlider").GetComponent<Slider>();
         rotateSlider.minValue = rotMinValue;
         rotateSlider.maxValue = rotMaxValue;
+        rotateSlider.SetValueWithoutNotify(0f);
+        transform.localRotation = baseRotation;
         rotateSlider.onValueChanged.AddListener(RotateSliderUpdate);
     }
 
@@ -629,6 +637,7 @@ public class scale : MonoBehaviour
         scaleSlider = GameObject.Find("scaleSlider").GetComponent<Slider>();
         scaleSlider.minValue = scaleMinValue;
         scaleSlider.maxValue = scaleMaxValue;
+        scaleSlider.SetValueWithoutNotify(transform.localScale.x);
         scaleSlider.onValueChanged.AddListener(ScaleSliderUpdate);
     }
 
@@ -653,7 +662,7 @@ public class scale : MonoBehaviour
    - Scale Min Value: `0.5`
    - Scale Max Value: `3`
 
-Jika skala model asli sudah besar (misalnya 10x), letakkan model di dalam wrapper `Konten3D` dengan skala 1, lalu atur skala model di child. Dengan begitu, slider scale mengubah wrapper, bukan merusak skala internal model.
+Jika skala model asli sudah besar (misalnya 10x), letakkan model di dalam wrapper `Konten3D` dengan skala 1, lalu atur skala model di child. Dengan begitu, slider scale mengubah wrapper, bukan merusak skala internal model. Pastikan kedua slider aktif dan namanya tepat, karena `GameObject.Find` tidak menemukan objek yang nonaktif.
 
 ### 6.8 Uji Nomor 3
 

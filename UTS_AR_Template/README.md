@@ -131,7 +131,7 @@ Untuk panduan terpisah yang benar-benar membuat **proyek Unity baru dari nol** (
 
 ### 2.3 Ruang disk
 
-Proyek ini sengaja ringan, tetapi Unity akan membuat folder `Library` baru saat pertama kali dibuka. Disk `/home` saat tutorial ini dibuat hanya tersisa sekitar 350 MB. Kosongkan beberapa GB terlebih dahulu, atau pindahkan proyek ke drive/mesin yang ruangnya cukup.
+Proyek ini sengaja ringan, tetapi Unity akan membuat folder `Library` baru saat pertama kali dibuka. Sisakan beberapa GB ruang kosong, atau pindahkan proyek ke drive/mesin yang ruangnya cukup.
 
 ### 2.4 Membuka proyek
 
@@ -991,8 +991,7 @@ Catatan: Modul 9 memakai `UnityEngine.UI.Text`. Di Unity 6, Text UGUI masih ters
 
 - Proyek ini belum memiliki folder `Library`.
 - Saat pertama dibuka, Unity akan membuat `Library` baru yang cukup besar.
-- Disk `/home` saat tutorial ini dibuat hanya tersisa sekitar 350 MB.
-- Kosongkan beberapa GB sebelum membuka Unity atau build APK.
+- Sisakan beberapa GB ruang kosong untuk `Library` dan build.
 - Paket Vuforia 138 MB di `Packages/` adalah hard link ke proyek lama; tidak menambah pemakaian disk saat ini. Jika proyek dipindahkan, pastikan file `com.ptc.vuforia.engine-11.4.4.tgz` ikut tersalin.
 
 ### 10.4 Aset besar
