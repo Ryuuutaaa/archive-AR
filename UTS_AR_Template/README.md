@@ -912,6 +912,15 @@ Catatan: Modul 9 memakai `UnityEngine.UI.Text`. Di Unity 6, Text UGUI masih ters
 
 ---
 
+<details>
+<summary><strong>Lihat screenshot Modul 9 halaman 19 — script btntampil</strong></summary>
+
+![Screenshot Modul 9 halaman 19](docs/images/modul/modul9-hal19-text-button.png)
+
+*Sumber: Modul 9 halaman 19. Tampilan Unity di modul mungkin versi lebih lama; gunakan sebagai petunjuk letak script dan OnClick.*
+
+</details>
+
 ## 8. Pemetaan nilai dan checklist akhir
 
 ### 8.1 Nilai B

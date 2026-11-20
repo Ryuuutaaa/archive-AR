@@ -10,7 +10,7 @@ Gunakan dokumen ini jika:
 
 Jika ingin jalur cepat memakai template, lihat `README.md`.
 
-> **Catatan visual:** Gambar-gambar di tutorial ini adalah **ilustrasi posisi panel/menu**, bukan screenshot asli Unity. Tampilan Unity 6 dapat sedikit berbeda, tetapi nama menu dan letak panelnya sama.
+> **Catatan visual:** Diagram di tutorial ini adalah **ilustrasi posisi panel/menu**, bukan screenshot asli Unity. Di bawah diagram, ada blok **“Lihat screenshot modul”** berisi screenshot asli dari modul praktikum; tampilan Unity/Vuforia di modul mungkin versi lebih lama, jadi ikuti langkah teks/diagram untuk Unity 6.
 
 ---
 
@@ -190,6 +190,15 @@ Catatan: di repositori GitHub, file `VuforiaConfiguration.asset` sengaja tidak d
 
 Jangan mempublikasikan license key.
 
+<details>
+<summary><strong>Lihat screenshot Modul 4 halaman 8 — License Manager</strong></summary>
+
+![Screenshot Modul 4 halaman 8](docs/images/modul/modul4-hal08-license.png)
+
+*Sumber: Modul 4 halaman 8. Tampilan Vuforia dapat berbeda dengan versi saat ini; gunakan sebagai petunjuk letak menu.*
+
+</details>
+
 ### 3.5 Siapkan database marker
 
 Pilihan 1 — dosen memberi `.dat` dan `.xml`:
@@ -234,6 +243,15 @@ Aturan marker yang baik:
 ![Ilustrasi license dan dataset](docs/images/04-license-dataset.png)
 
 *Gambar 4. Letak license di Assets/Resources, dataset di Assets/StreamingAssets/Vuforia, dan model di Assets/Models (ilustrasi).*
+
+<details>
+<summary><strong>Lihat screenshot Modul 4 halaman 12 — Add Target / Single Image</strong></summary>
+
+![Screenshot Modul 4 halaman 12](docs/images/modul/modul4-hal12-target.png)
+
+*Sumber: Modul 4 halaman 12. Tampilan Vuforia dapat berbeda; intinya pilih Single Image lalu Add Target.*
+
+</details>
 
 ### 3.6 Impor model 3D
 
@@ -393,6 +411,19 @@ ARScene
 
 *Gambar 6. Inspector Button: OnClick, fungsi PindahScene, dan parameter ARScene (ilustrasi).*
 
+<details>
+<summary><strong>Lihat screenshot Modul 11 — script pindah scene dan OnClick</strong></summary>
+
+![Screenshot Modul 11 halaman 17](docs/images/modul/modul11-hal17-pindah-scene.png)
+
+*Modul 11 halaman 17 — membuat script pindah scene.*
+
+![Screenshot Modul 11 halaman 19](docs/images/modul/modul11-hal19-onclick.png)
+
+*Modul 11 halaman 19 — mengisi OnClick Button. Modul memakai nama scene `PikaAR`; tutorial ini memakai `ARScene`. Tampilan Unity di modul mungkin versi lebih lama.*
+
+</details>
+
 ### 4.8 Uji Nomor 1
 
 1. Tekan Play di scene `MainMenu`.
@@ -494,6 +525,15 @@ Jika kubus muncul, berarti AR Camera, marker, dan parenting sudah benar.
 
 *Gambar 7. Hierarchy AR: ImageTarget > Konten3D > model dosen, beserta panel Inspector Image Target (ilustrasi).*
 
+<details>
+<summary><strong>Lihat screenshot Modul 5 halaman 10 — menambahkan objek 3D</strong></summary>
+
+![Screenshot Modul 5 halaman 10](docs/images/modul/modul5-hal10-objek3d.png)
+
+*Sumber: Modul 5 halaman 10. Tampilan Unity di modul mungkin versi lebih lama.*
+
+</details>
+
 ### 5.4 Material dan tekstur
 
 1. Klik kanan Project > **Create > Material**.
@@ -504,6 +544,15 @@ Jika kubus muncul, berarti AR Camera, marker, dan parenting sudah benar.
 6. Jika pink:
    - Built-in: shader `Standard`.
    - URP: shader `Universal Render Pipeline/Lit`.
+
+<details>
+<summary><strong>Lihat screenshot Modul 5 halaman 15 — material dan tekstur</strong></summary>
+
+![Screenshot Modul 5 halaman 15](docs/images/modul/modul5-hal15-material.png)
+
+*Sumber: Modul 5 halaman 15. Tampilan Unity di modul mungkin versi lebih lama; intinya material ditempel ke objek dan tekstur masuk ke Albedo.*
+
+</details>
 
 ### 5.5 Uji Nomor 2
 
@@ -698,6 +747,19 @@ Jika skala model asli sudah besar (misalnya 10x), letakkan model di dalam wrappe
 
 *Gambar 8. Slider rotateSlider/scaleSlider dan komponen rotasi/scale pada Konten3D (ilustrasi).*
 
+<details>
+<summary><strong>Lihat screenshot Modul 6 — slider rotasi dan slider scale</strong></summary>
+
+![Screenshot Modul 6 halaman 25](docs/images/modul/modul6-hal25-slider-rotasi.png)
+
+*Modul 6 halaman 25 — slider dan script rotasi.*
+
+![Screenshot Modul 6 halaman 29](docs/images/modul/modul6-hal29-slider-scale.png)
+
+*Modul 6 halaman 29 — slider dan script scale. Tampilan Unity di modul mungkin versi lebih lama. Catatan: kode rotasi di modul memakai `transform.rotation.x`; gunakan kode yang sudah diperbaiki di tutorial ini.*
+
+</details>
+
 ### 6.8 Uji Nomor 3
 
 1. Simpan `ARScene`.
@@ -730,6 +792,15 @@ Jika ingin pinch/rotate memakai dua jari:
 6. Uji di Editor dengan simulator, atau build ke HP dan gunakan dua jari.
 
 Jika Lean Touch versi lama tidak mendeteksi sentuhan, set **Active Input Handling** ke `Both` di Player Settings.
+
+<details>
+<summary><strong>Lihat screenshot Modul 6 halaman 21 — komponen Lean Touch</strong></summary>
+
+![Screenshot Modul 6 halaman 21](docs/images/modul/modul6-hal21-lean-touch.png)
+
+*Sumber: Modul 6 halaman 21. Tampilan Unity di modul mungkin versi lebih lama; komponennya Lean Pinch Scale, Lean Twist Rotate Axis, dan Lean Drag Translate.*
+
+</details>
 
 ### 6.10 Checklist Nomor 3
 
@@ -793,6 +864,15 @@ Buka **Player Settings**:
 ![Ilustrasi Build Profiles](docs/images/09-build-settings.png)
 
 *Gambar 9. Build Profiles: urutan scene MainMenu 0, ARScene 1, Player Settings, dan tombol Build (ilustrasi).*
+
+<details>
+<summary><strong>Lihat screenshot Modul 5 halaman 24 — Player Settings</strong></summary>
+
+![Screenshot Modul 5 halaman 24](docs/images/modul/modul5-hal24-player-setting.png)
+
+*Sumber: Modul 5 halaman 24. Tampilan Unity di modul mungkin versi lebih lama; di Unity 6 letaknya di Build Profiles / Player Settings.*
+
+</details>
 
 ### 7.4 Build
 
