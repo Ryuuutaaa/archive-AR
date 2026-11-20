@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="no-longer-human" size="20.000000 31.165644" />
+    <ImageTarget name="cover-sui" size="20.000000 31.846153" />
+    <ImageTarget name="10-swort" size="20.000000 36.240002" />
+  </Tracking>
+</QCARConfig>

@@ -1,0 +1,47 @@
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Generated IDE files
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vs/
+.idea/
+.vscode/
+
+# Build output and source archives
+*.apk
+*.aab
+*.unitypackage
+*.zip
+*.zip.meta
+
+# Local tools and operating system files
+/.commandcode/
+/untitled
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+
+# Vuforia configuration contains the local license key
+VuforiaConfiguration.asset
+VuforiaConfiguration.asset.meta
