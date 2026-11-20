@@ -11,6 +11,8 @@ Gunakan dokumen ini jika:
 Jika ingin jalur cepat memakai template, lihat `README.md`.
 
 > **Catatan visual:** Diagram di tutorial ini adalah **ilustrasi posisi panel/menu**, bukan screenshot asli Unity. Di bawah diagram, ada blok **“Lihat screenshot modul”** berisi screenshot asli dari modul praktikum; tampilan Unity/Vuforia di modul mungkin versi lebih lama, jadi ikuti langkah teks/diagram untuk Unity 6.
+>
+> Screenshot modul yang disertakan: Modul 4 hal. 8 dan 12; Modul 5 hal. 10, 15, dan 24; Modul 6 hal. 21, 25, dan 29; Modul 9 hal. 19; Modul 11 hal. 17 dan 19.
 
 ---
 
@@ -813,6 +815,55 @@ Jika Lean Touch versi lama tidak mendeteksi sentuhan, set **Active Input Handlin
 - [ ] Tidak ada `NullReferenceException`.
 - [ ] Opsional: Lean Touch pinch berfungsi.
 
+### 6.11 Opsional — teks/informasi pada objek (Modul 9)
+
+Bagian ini tidak wajib untuk gambar UTS, tetapi mengikuti Modul 9 dan bisa menjadi nilai tambah.
+
+1. Buka `ARScene`.
+2. Gunakan `CanvasAR` yang sudah dibuat di Nomor 3.
+3. Klik kanan `CanvasAR` > **UI > Legacy > Text**.
+4. Beri nama `TeksInfo`; isi teks informasi yang ingin ditampilkan.
+5. Atur ukuran, warna, font, dan posisi teks.
+6. Klik kanan `CanvasAR` > **UI > Button**; beri nama `TombolInfo`.
+7. Ubah teks anak tombol menjadi `INFO`.
+8. Buat script `btntampil.cs` di `Assets/Scripts/`:
+
+```csharp
+using UnityEngine;
+using UnityEngine.UI;
+
+public class btntampil : MonoBehaviour
+{
+    public Text Textfield;
+    private bool tampilan = false;
+
+    public void SetText(string text)
+    {
+        tampilan = !tampilan;
+        Textfield.text = tampilan ? text : "";
+    }
+}
+```
+
+9. Tempelkan `btntampil` ke `TombolInfo`.
+10. Isi field `Textfield` dengan `TeksInfo`.
+11. Pada `Button > On Click ()`, klik **+**.
+12. Seret `TombolInfo` ke kolom objek.
+13. Pilih `btntampil > SetText (string)`.
+14. Isi teks informasi pada kolom parameter.
+15. Simpan `ARScene` dan uji tombol saat marker terdeteksi.
+
+Catatan: jika ingin teks benar-benar menempel pada objek 3D, set `Canvas > Render Mode` menjadi `World Space`, atur scale/position, lalu letakkan di dekat model. Jangan hanya memindahkan Canvas Screen Space ke dalam objek.
+
+<details>
+<summary><strong>Lihat screenshot Modul 9 halaman 19 — script btntampil</strong></summary>
+
+![Screenshot Modul 9 halaman 19](docs/images/modul/modul9-hal19-text-button.png)
+
+*Sumber: Modul 9 halaman 19. Tampilan Unity di modul mungkin versi lebih lama; gunakan sebagai petunjuk letak script dan OnClick.*
+
+</details>
+
 ---
 
 ## 7. Build APK Android
@@ -969,7 +1020,7 @@ Builds/UTS_AR.apk
 - Unity 6000.0.34f1; jangan memakai Unity 2021/2022 untuk panduan ini.
 - Sisakan beberapa GB disk untuk `Library` dan build.
 - Kode Modul 6 sudah diperbaiki untuk Unity 6 (rotasi memakai `localEulerAngles`/offset).
-- Untuk teks/info tambahan, lihat Modul 9 dan bagian 7 pada `README.md` utama.
+- Untuk teks/info tambahan, lihat bagian **6.11** di dokumen ini dan Modul 9; versi template ada di `README.md` utama bagian 7.
 
 ---
 
@@ -982,3 +1033,25 @@ Builds/UTS_AR.apk
 - **Modul 11** — Tombol menu ke scene lain.
 
 Tutorial ini disusun end-to-end untuk Nomor 1, 2, dan 3 sesuai requirement UTS pada gambar.
+
+---
+
+## 12. Galeri screenshot modul
+
+Semua screenshot modul yang dipakai di tutorial ini. Klik nama file untuk membuka gambar.
+
+| Modul | Halaman | Isi | File |
+|---|---|---|---|
+| 4 | 8 | License Manager | [Buka](docs/images/modul/modul4-hal08-license.png) |
+| 4 | 12 | Add Target / Single Image | [Buka](docs/images/modul/modul4-hal12-target.png) |
+| 5 | 10 | Menambahkan objek 3D | [Buka](docs/images/modul/modul5-hal10-objek3d.png) |
+| 5 | 15 | Material dan tekstur | [Buka](docs/images/modul/modul5-hal15-material.png) |
+| 5 | 24 | Player Settings | [Buka](docs/images/modul/modul5-hal24-player-setting.png) |
+| 6 | 21 | Komponen Lean Touch | [Buka](docs/images/modul/modul6-hal21-lean-touch.png) |
+| 6 | 25 | Slider dan script rotasi | [Buka](docs/images/modul/modul6-hal25-slider-rotasi.png) |
+| 6 | 29 | Slider dan script scale | [Buka](docs/images/modul/modul6-hal29-slider-scale.png) |
+| 9 | 19 | Script btntampil | [Buka](docs/images/modul/modul9-hal19-text-button.png) |
+| 11 | 17 | Script pindah scene | [Buka](docs/images/modul/modul11-hal17-pindah-scene.png) |
+| 11 | 19 | OnClick Button | [Buka](docs/images/modul/modul11-hal19-onclick.png) |
+
+Screenshot ini berasal dari modul praktikum; tampilan Unity/Vuforia di modul mungkin versi lebih lama. Untuk Unity 6, ikuti langkah teks dan diagram di atas.
